@@ -5,7 +5,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { FaHornbill } from "react-icons/fa";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { GrFormNextLink } from "react-icons/gr";
 import { GiMonoWheelRobot } from "react-icons/gi";

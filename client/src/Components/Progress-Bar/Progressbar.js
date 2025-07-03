@@ -7,37 +7,39 @@ const Progressbar = ({ width }) => {
   const [percent, setPercent] = useState(0);     // Start progress at 0%
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {            // Check if element is in view
-            const finalValue = parseInt(width);  // Get actual width like "90%" → 90
-            let current = 0;
+  const currentRef = targetRef.current; // ✅ Copy ref to a local variable
 
-            const interval = setInterval(() => {
-              if (current < finalValue) {
-                current += 1;                    // Gradually increase value
-                setPercent(current);            // Update state (causes re-render)
-              } else {
-                clearInterval(interval);        // Stop animation when done
-              }
-            }, 15);                              // Animation speed
-          }
-        });
-      },
-      { threshold: 0.5 }                         // Trigger when 50% of element is visible
-    );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const finalValue = parseInt(width);
+          let current = 0;
 
-    if (targetRef.current) {
-      observer.observe(targetRef.current);       // Start observing
+          const interval = setInterval(() => {
+            if (current < finalValue) {
+              current += 1;
+              setPercent(current);
+            } else {
+              clearInterval(interval);
+            }
+          }, 15);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  if (currentRef) {
+    observer.observe(currentRef); // ✅ Use local ref variable
+  }
+
+  return () => {
+    if (currentRef) {
+      observer.unobserve(currentRef); // ✅ Use same local ref here too
     }
-
-    return () => {
-      if (targetRef.current) {
-        observer.unobserve(targetRef.current);   // Clean up when unmounted
-      }
-    };
-  }, [width]);                                   // Re-run only if width changes
+  };
+}, [width]);
 
   return (
 

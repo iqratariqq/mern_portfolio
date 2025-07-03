@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./Contact.css";
 import axios from "axios";
 import ContactImg from "../../assests/images/Contact.png"; // Adjust the path as necessary
-import { CiLinkedin, CiZoomIn } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import { Zoom } from "react-awesome-reveal";
 import { toast } from "react-toastify";
+import { CiLinkedin } from "react-icons/ci";
 
 const Contact = () => {
   const [name, setname] = useState("");
