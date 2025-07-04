@@ -100,12 +100,12 @@ const skillsData = [
     ],
   },
   {
-    Name: "AI",
+    Name: "Gen AI",
     skills: [
-      { name: "TensorFlow", width: "80" },
-      { name: "PyTorch", width: "75" },
-      { name: "NLP", width: "70" },
-      { name: "Computer Vision", width: "65" },
+      { name: "Prompt Engineering", width: "80" },
+      { name: "Text & Image Generation", width: "75" },
+      { name: "Chatbot Development", width: "70" },
+      { name: "NLP & Model Fine-tuning", width: "65" },
     ],
   },
   {
