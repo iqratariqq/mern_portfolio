@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "nodemon server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "iqra tariq",
   "license": "MIT",
   "description": "",
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "axios": "^1.10.0",
     "cors": "^2.8.5",
