@@ -22,8 +22,8 @@ const controler = (req, res) => {
   }
   //email matter
   transport.sendMail({
-    to: "iqratariq2912@gmail.com",
-    from: "iqratariq2912@gmail.com",
+    to: "iqrat269@gmail.com",
+    from: "iqrat269@gmail.com",
     subject: "Regarding Mern portfolio",
     html: `
         <h5>Detail Information</h5>
