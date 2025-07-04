@@ -27,9 +27,9 @@ const Contact = () => {
       //validation
       if (res.data.success) {
         toast.success(res.data.message);
-        setname(" ");
-        setemail(" ")
-        setmessage(" ")
+        setname("");
+        setemail("")
+        setmessage("")
       } else {
         toast.success(res.data.message);
       }
