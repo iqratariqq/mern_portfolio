@@ -15,7 +15,7 @@ import { Zoom } from "react-awesome-reveal";
 const Projects = () => {
   return (
     <>
-      <div className="Project-Container">
+      <div className="Project-Container" id="projects">
         <Zoom>
           {" "}
           <div className="P-title">
